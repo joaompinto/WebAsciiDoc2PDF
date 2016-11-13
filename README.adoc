@@ -1,0 +1,39 @@
+= Web based PDF generator for AsciiDoc files
+João Pinto <lamego.pinto@gmail.com>
+
+== Introduction
+AsciiDoc is a text document format for writing notes, documentation, articles, books, ebooks, slideshows, web pages, man pages and blogs. You can get a more complete documentation at http://asciidoctor.org/docs/what-is-asciidoc/ .
+
+Editing AsciiDoc files is easy on any platform, any regyular text editor can be used, and there are many with real time preview of the document as you type.
+
+Producing a properly formated PDF can be a bit more complex, specially on platforms like Windows on which the tools required for the conversion are harder to install. This is where WebAsciiDoc2PDF hekos, it provides a minimal web http server which anyone can use to upload the .adoc files, and get the .pdf. The conversion is performed on the web server, so there is no need for publishing tool on the end users system.
+
+![alt](demo/WebAsciiDoc2PDF.gif)
+
+== Requirements
+There are two options for install/running the WebAsciiDoc2PDF sever:
+    
+    - Using a docker container which provides all the required componentes
+    - Manually installing the componentes and running the python script
+
+== How to install
+The prefered install method is using docker. In this case you must install the docker engine, the specific install instructions for docker will depend on your platform/distribution.
+
+To build the docker image use:
+
+```bash
+docker build -t asciidoctor-docker .
+```
+
+To run the docker container use:
+```bash
+docker run -p 8080:8080 -t asciidoctor-docker .   
+```
+
+If you prefer the manual method, you will need:
+
+  - ruby and asciidoctor
+  - dblatex and texlive-ucs
+  - python2 or python3 and CherryPy
+
+Even if you want to perform a manual install, looking at Dockerfile content will be helpful.
