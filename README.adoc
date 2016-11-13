@@ -8,7 +8,7 @@ Editing AsciiDoc files is easy on any platform, any regyular text editor can be 
 
 Producing a properly formated PDF can be a bit more complex, specially on platforms like Windows on which the tools required for the conversion are harder to install. This is where WebAsciiDoc2PDF hekos, it provides a minimal web http server which anyone can use to upload the .adoc files, and get the .pdf. The conversion is performed on the web server, so there is no need for publishing tool on the end users system.
 
-![alt](demo/WebAsciiDoc2PDF.gif)
+image::demo/WebAsciiDoc2PDF.gif[Demo]
 
 == Requirements
 There are two options for install/running the WebAsciiDoc2PDF sever:
